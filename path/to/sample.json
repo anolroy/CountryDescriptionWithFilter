@@ -1,0 +1,46 @@
+[
+    {
+        "Country": "india",
+        "Place description": "this is nagpur. we speak bangla"
+    },
+    {
+        "Country": "usa",
+        "Place description": "this is new york. we speak english"
+    },
+    {
+        "Country": "france",
+        "Place description": "this is paris. we speak french"
+    },
+    {
+        "Country": "japan",
+        "Place description": "this is tokyo. we speak japanese"
+    },
+    {
+        "Country": "brazil",
+        "Place description": "this is rio de janeiro. we speak portuguese"
+    },
+    {
+        "Country": "china",
+        "Place description": "this is beijing. we speak mandarin"
+    },
+    {
+        "Country": "germany",
+        "Place description": "this is berlin. we speak german"
+    },
+    {
+        "Country": "italy",
+        "Place description": "this is rome. we speak italian"
+    },
+    {
+        "Country": "russia",
+        "Place description": "this is moscow. we speak russian"
+    },
+    {
+        "Country": "egypt",
+        "Place description": "this is cairo. we speak arabic"
+    },
+    {
+        "Country": "mexico",
+        "Place description": "this is mexico city. we speak spanish"
+    }
+] 
