@@ -11,6 +11,9 @@
         .country-list, .description-list {
             margin: 10px;
         }
+        .search-container {
+            margin-bottom: 20px;
+        }
     </style>
     <script>
         // Sample data from the JSON file
@@ -76,17 +79,21 @@
                 }
             });
         }
-    </script>
-</head>
-<body>
-    <h1>Country and Place Description</h1>
-    <div class="container">
-        <div class="country-list">
-            <h2>Select Countries</h2>
-            <!-- Populate checkboxes dynamically -->
-            <script>
-                const countryList = document.querySelector('.country-list');
-                data.forEach(item => {
+
+        function searchDescriptions() {
+            const searchInput = document.getElementById('searchBox').value.toLowerCase();
+            const descriptionList = document.getElementById('descriptionList');
+            const countryList = document.querySelector('.country-list');
+            descriptionList.innerHTML = ''; // Clear previous descriptions
+            countryList.innerHTML = ''; // Clear previous country list
+
+            data.forEach(item => {
+                if (item["Place description"].toLowerCase().includes(searchInput)) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = item["Place description"];
+                    descriptionList.appendChild(listItem);
+
+                    // Add country to the country list
                     const checkbox = document.createElement('input');
                     checkbox.type = 'checkbox';
                     checkbox.name = 'country';
@@ -103,8 +110,20 @@
                     countryList.appendChild(checkbox);
                     countryList.appendChild(label);
                     countryList.appendChild(br);
-                });
-            </script>
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Country and Place Description</h1>
+    <div class="search-container">
+        <input type="text" id="searchBox" placeholder="Search descriptions..." oninput="searchDescriptions()">
+    </div>
+    <div class="container">
+        <div class="country-list">
+            <h2>Select Countries</h2>
+            <!-- Country checkboxes will be populated dynamically based on search results -->
         </div>
         <div class="description-list">
             <h2>Place Descriptions</h2>
