@@ -83,9 +83,9 @@
         function searchDescriptions() {
             const searchInput = document.getElementById('searchBox').value.toLowerCase();
             const descriptionList = document.getElementById('descriptionList');
-            const countryList = document.querySelector('.country-list');
+            const countryList = document.getElementById('countryCheckboxes');
             descriptionList.innerHTML = ''; // Clear previous descriptions
-            countryList.innerHTML = ''; // Clear previous country list
+            countryList.innerHTML = ''; // Clear previous country checkboxes
 
             data.forEach(item => {
                 if (item["Place description"].toLowerCase().includes(searchInput)) {
@@ -123,7 +123,9 @@
     <div class="container">
         <div class="country-list">
             <h2>Select Countries</h2>
-            <!-- Country checkboxes will be populated dynamically based on search results -->
+            <div id="countryCheckboxes">
+                <!-- Country checkboxes will be populated dynamically based on search results -->
+            </div>
         </div>
         <div class="description-list">
             <h2>Place Descriptions</h2>
